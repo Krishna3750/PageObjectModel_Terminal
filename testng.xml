@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Test Suite">
+
+    <listeners>
+        <listener class-name="Listener.MyListener"/>
+    </listeners>
+
+    <test name = "Photos Test">
+
+        <parameter name="deviceName" value="Pixel 9a"/>
+        <parameter name="platformName" value="Android"/>
+        <parameter name="platformVersion" value="17"/>
+        <parameter name="udid" value="46261JEBF00198"/>
+        <parameter name="appPackage" value="com.google.android.apps.photos"/>
+        <parameter name="appActivity" value="com.google.android.apps.photos.home.HomeActivity"/>
+        <parameter name="appName" value="Photos"/>
+
+        <classes>
+            <class name="Tests.PhotoTest">
+                <methods>
+                    <include name="test_PressActions"/>
+                    <include name="test_MoveActions"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name = "Contact Test">
+
+        <parameter name="deviceName" value="Pixel 9a"/>
+        <parameter name="platformName" value="Android"/>
+        <parameter name="platformVersion" value="17"/>
+        <parameter name="udid" value="46261JEBF00198"/>
+        <parameter name="appPackage" value="com.google.android.dialer"/>
+        <parameter name="appActivity" value="com.google.android.dialer.extensions.GoogleDialtactsActivity"/>
+        <parameter name="appName" value="Contact"/>
+
+        <classes>
+            <class name="Tests.ContactTest">
+                <methods>
+                    <include name="addContactTest"/>
+                    <include name="editContactTest"/>
+                    <include name="deleteContactTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>
